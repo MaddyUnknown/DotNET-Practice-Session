@@ -2,21 +2,25 @@
 
 namespace Program
 {
-    class Driver
+    public class TempetatureUtils
     {
-        static float tempCelciusToFarenheit(float tempCelcius)
+        public static float tempCelciusToFarenheit(float tempCelcius)
         {
             float tempFareheit = tempCelcius * 9 / 5 + 32;
 
             return tempFareheit;
         }
 
-        static float tempFarenheitToCelcius(float tempFareheit)
+        public static float tempFarenheitToCelcius(float tempFareheit)
         {
             float tempCelcius = (tempFareheit - 32) * 5 / 9;
 
             return tempCelcius;
         }
+
+    }
+
+    class Driver { 
 
         static void Main(string[] args)
         {
@@ -32,10 +36,10 @@ namespace Program
                 return;
             }
 
-            float tempFarenheit = tempCelciusToFarenheit(tempCelcius);
+            float tempFarenheit = TempetatureUtils.tempCelciusToFarenheit(tempCelcius);
 
             Console.WriteLine($"Temperature in Farehenit is: {tempFarenheit}");
-            Console.WriteLine($"Temperature in Celcius is: {tempFarenheitToCelcius(tempFarenheit)}");
+            Console.WriteLine($"Temperature in Celcius is: {TempetatureUtils.tempFarenheitToCelcius(tempFarenheit)}");
 
         }
     }
